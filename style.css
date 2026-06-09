@@ -8,6 +8,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    padding: 0;
 }
 
 .burger {
@@ -40,6 +41,7 @@ nav {
 
 main {
     width: 1200px;
+    max-width: 100%;
     margin: 20px auto;
 }
 
@@ -59,7 +61,7 @@ main {
 
 .promotion img {
     width: 80px;
-    height: 50px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -136,6 +138,10 @@ main {
     .promotion:nth-child(3) {
         width: 100%;
         flex: none;
+    }
+
+    .promotion img {
+        height: 50px;
     }
 
     .content {
