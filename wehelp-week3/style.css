@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+}
+
+.burger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+.welcome {
+    background-color: lightblue;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+}
+
+main {
+    width: 1200px;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.promotions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.promotion {
+    background-color: #ddeef8;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.promotion img {
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promotion span {
+    margin-left: 10px;
+}
+
+.promotion:nth-child(1) {
+    width: 100%;
+}
+
+.promotion:nth-child(2) {
+    flex: 2;
+}
+
+.promotion:nth-child(3) {
+    flex: 1;
+}
+
+.content {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: lightgray;
+    height: 200px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 40px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+@media (max-width: 1200px) {
+    main {
+        width: 90%;
+    }
+
+
+    .promotion:nth-child(1),
+    .promotion:nth-child(2) {
+        width: calc((100% - 20px)/2);
+        flex: none;
+    }
+
+    .promotion:nth-child(3) {
+        width: 100%;
+        flex: none;
+    }
+
+    .promotion img {
+        height: 50px;
+    }
+
+    .content {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .card:nth-child(9),
+    .card:nth-child(10) {
+        grid-column: span 2;
+    }
+
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 90%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: 200px;
+        height: 100vh;
+
+        background-color: white;
+        padding: 20px;
+        gap: 20px;
+        z-index: 999;
+    }
+
+    .promotion:nth-child(1),
+    .promotion:nth-child(2),
+    .promotion:nth-child(3) {
+        width: 100%;
+        flex: none;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .card:nth-child(9),
+    .card:nth-child(10) {
+        grid-column: auto;
+    }
+}
+
+#load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
